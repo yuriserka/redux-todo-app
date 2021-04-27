@@ -3,10 +3,10 @@ import TodoListItem from "@features/todos/components/todo";
 import { ITodo } from "@features/todos/todo-interface";
 import {
   selectCompletedTodos,
-  selectNotCompletedTodos
+  selectNotCompletedTodos,
 } from "@features/todos/todo-selectors";
-import { compareAsc, compareDesc } from "date-fns";
 import { useAppSelector } from "@store/hooks";
+import { compareAsc, compareDesc } from "date-fns";
 
 type Props = {
   view: "completed" | "uncompleted";
