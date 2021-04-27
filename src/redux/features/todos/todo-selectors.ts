@@ -1,23 +1,4 @@
-import { ITodo } from "redux/features/todos/todo-interface";
 import { RootState } from "redux/store";
-import { compareAsc, compareDesc } from "date-fns";
-
-type SortOrder = "asc" | "desc";
-
-const cmpDateFn: { [k in SortOrder]: Function } = {
-  asc: compareAsc,
-  desc: compareDesc,
-};
-
-export const sortTodosByCreationDate = (v: ITodo[], order: SortOrder = "asc") =>
-  v
-    .slice()
-    .sort((a, b) =>
-      cmpDateFn[order](
-        new Date(b.last_modification),
-        new Date(a.last_modification)
-      )
-    );
 
 export const selectAllTodos = (state: RootState) => state.todos.entities;
 
