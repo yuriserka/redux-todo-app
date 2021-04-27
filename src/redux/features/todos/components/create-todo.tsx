@@ -62,7 +62,7 @@ export default function CreateTodo() {
         type="submit"
         className="hover:opacity-75 rounded-full hover:bg-blue-700 p-2"
       >
-        <FaPlus className="text-white" size={24} />
+        <FaPlus className="sm:hidden text-white" size={24} />
       </button>
     </form>
   );
