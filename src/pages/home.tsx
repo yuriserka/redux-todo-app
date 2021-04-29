@@ -17,6 +17,7 @@ export default function Home() {
   function ChangeViewButtonTo(view: Views) {
     return (
       <button
+        data-testid={`btn-${view}`}
         onClick={() => setActualView(view)}
         className={`capitalize hover:bg-blue-400 p-2 rounded-md font-semibold ${
           actualView === view ? "bg-blue-300" : ""
@@ -34,7 +35,7 @@ export default function Home() {
         {ChangeViewButtonTo("completed")}
         {ChangeViewButtonTo("uncompleted")}
       </div>
-      <div className="flex p-5">
+      <div data-testid="todo-list" className="flex p-5">
         <TodoList view={actualView} />
       </div>
     </div>

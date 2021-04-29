@@ -1,4 +1,4 @@
-import { ITodo } from "redux/features/todos/todo-interface";
+import { ITodo } from "./todo-interface";
 
 export async function fetchTodos() {
   return {

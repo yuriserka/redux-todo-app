@@ -3,9 +3,10 @@ import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
-function Input({ onChange, name, value }: any) {
+function Input({ onChange, name, value, ...rest }: any) {
   return (
     <input
+      {...rest}
       className="form-input rounded-lg w-3/5"
       type="text"
       name={name}
@@ -52,13 +53,20 @@ export default function CreateTodo() {
       onSubmit={handleSubmit}
     >
       <h1 className="text-5xl font-bold text-gray-800 mb-2">Create Todo</h1>
-      <Input name="title" value={form?.title} onChange={handleChange} />
       <Input
+        data-testid="input-todo-title"
+        name="title"
+        value={form?.title}
+        onChange={handleChange}
+      />
+      <Input
+        data-testid="input-todo-description"
         name="description"
         value={form?.description}
         onChange={handleChange}
       />
       <button
+        data-testid="btn-todo-create-confirm"
         type="submit"
         className="hover:opacity-75 rounded-full hover:bg-blue-700 p-2"
       >

@@ -1,9 +1,9 @@
-import { fetchTodos } from "@features/todos/todos-api";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 } from "uuid";
 import { ITodo, ITodoDto } from "./todo-interface";
+import { fetchTodos } from "./todos-api";
 
-type InitialState = {
+export type TodosState = {
   status: "idle" | "loading" | "failed";
   entities: ITodo[];
 };
@@ -18,7 +18,7 @@ const todosSlice = createSlice({
   initialState: {
     entities: [],
     status: "idle",
-  } as InitialState,
+  } as TodosState,
   reducers: {
     add: (state, { payload }: PayloadAction<ITodoDto>) => {
       state.entities = [
@@ -31,7 +31,7 @@ const todosSlice = createSlice({
         },
       ];
     },
-    save: (state, _: PayloadAction<void>) => {
+    saveAll: (state, _: PayloadAction<void>) => {
       localStorage.setItem("@redux-todos", JSON.stringify(state.entities));
     },
     check: (state, { payload }: PayloadAction<string>) => {

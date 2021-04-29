@@ -16,10 +16,9 @@ const parseEmojis = (value: string) =>
 
 type Props = {
   todo: ITodo;
-  showCheckbox?: boolean;
 };
 
-export default function TodoListItem({ todo, showCheckbox }: Props) {
+export default function TodoListItem({ todo }: Props) {
   const dispatch = useDispatch();
 
   return (
@@ -40,9 +39,7 @@ export default function TodoListItem({ todo, showCheckbox }: Props) {
           onClick={() => dispatch(todosAction.delete(todo.id))}
         />
         <input
-          className={`cursor-pointer form-checkbox ${
-            showCheckbox ? "" : "hidden"
-          }`}
+          className={`cursor-pointer form-checkbox`}
           type="checkbox"
           checked={todo.checked}
           onChange={() => dispatch(todosAction.check(todo.id))}

@@ -1,4 +1,4 @@
-import Router from "@components/router";
+import Routes from "@components/router";
 import { todosAction } from "@features/todos/todos-slice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -7,7 +7,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   function saveState() {
-    dispatch(todosAction.save());
+    dispatch(todosAction.saveAll());
   }
 
   useEffect(() => {
@@ -20,5 +20,5 @@ export default function App() {
     // eslint-disable-next-line
   }, []);
 
-  return <Router />;
+  return <Routes />;
 }

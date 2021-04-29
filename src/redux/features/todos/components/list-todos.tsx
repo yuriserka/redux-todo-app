@@ -58,7 +58,7 @@ export default function TodoList({ view }: Props) {
           key={t.id}
           className="shadow-md rounded-xl bg-gray-100 hover:bg-gray-300"
         >
-          <TodoListItem todo={t} showCheckbox />
+          <TodoListItem todo={t} />
         </div>
       ))}
     </div>
