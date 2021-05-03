@@ -50,7 +50,7 @@ To get a local copy up and running follow these simple steps.
 
   1. Unit Tests
     ```sh
-    yarn test
+    yarn test --coverage
     ```
   2. e2e tests
     ```sh
