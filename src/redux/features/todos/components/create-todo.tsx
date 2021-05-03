@@ -39,7 +39,7 @@ export default function CreateTodo() {
   function handleSubmit(e: any) {
     e.preventDefault();
 
-    if (!form.title) {
+    if (!!!form.title) {
       return;
     }
 
@@ -49,28 +49,37 @@ export default function CreateTodo() {
 
   return (
     <form
-      className="centered flex-col space-y-3 bg-gradient-to-br from-indigo-400 to-green-500 h-60 w-full"
+      data-test="create-todo-form"
+      className="centered flex-col space-y-3 h-60 w-full bg-gradient-to-r from-yellow-300 to-indigo-500 via-pink-400 animate-gradient-x"
       onSubmit={handleSubmit}
     >
       <h1 className="text-5xl font-bold text-gray-800 mb-2">Create Todo</h1>
       <Input
-        data-testid="input-todo-title"
+        data-test="input-todo-title"
         name="title"
         value={form?.title}
         onChange={handleChange}
       />
       <Input
-        data-testid="input-todo-description"
+        data-test="input-todo-description"
         name="description"
         value={form?.description}
         onChange={handleChange}
       />
       <button
-        data-testid="btn-todo-create-confirm"
+        data-test="btn-todo-create-confirm"
         type="submit"
-        className="hover:opacity-75 rounded-full hover:bg-blue-700 p-2"
+        className={`rounded-full sm:hidden p-2 ${
+          !!form?.title ? "cursor-pointer hover:bg-blue-500" : "cursor-not-allowed"
+        }`}
+        disabled={!!!form?.title}
       >
-        <FaPlus className="sm:hidden text-white" size={24} />
+        <FaPlus
+          className={`${
+            !!form.title ? "text-white" : "text-gray-900"
+          }`}
+          size={24}
+        />
       </button>
     </form>
   );

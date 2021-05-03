@@ -1,0 +1,7 @@
+{
+  "id": "1c319bdc-ad3d-4d40-ae97-eb21b48632aa",
+  "title": "mock todo",
+  "description": "this data is used by cypress fixture",
+  "checked": false,
+  "last_modification": "2021-05-03T14:07:05.758Z"
+}

@@ -1,4 +1,3 @@
-import { todosAction } from "@features/todos/todos-slice";
 import { store } from "@store/store";
 import { cleanup, render } from "@testing-library/react";
 import { Provider } from "react-redux";
