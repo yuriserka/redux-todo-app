@@ -2,7 +2,18 @@
   "name": "tutorial-redux",
   "version": "0.1.0",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT License",
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "crato eject",
+    "e2e": "start-server-and-test start http://localhost:3000 cy:run",
+    "poste2e": "yarn report:merge && yarn report:generate",
+    "cy:run": "cypress run",
+    "report:merge": "mochawesome-merge cypress/results/json/*.json > cypress/results/mochawesome-bundle.json",
+    "report:generate": "marge cypress/results/mochawesome-bundle.json -o cypress/reports/html"
+  },
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@reduxjs/toolkit": "^1.5.1",
@@ -39,19 +50,7 @@
     "mochawesome-report-generator": "^5.2.0",
     "postcss": "^7",
     "start-server-and-test": "^1.12.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "webpack": "^5.36.2"
-  },
-  "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "crato eject",
-    "e2e": "start-server-and-test start http://localhost:3000 cy:run",
-    "poste2e": "yarn report:merge && yarn report:generate",
-    "cy:run": "cypress run",
-    "report:merge": "mochawesome-merge cypress/results/json/*.json > cypress/results/mochawesome-bundle.json",
-    "report:generate": "marge cypress/results/mochawesome-bundle.json -o cypress/reports/html"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "eslintConfig": {
     "extends": "react-app"
