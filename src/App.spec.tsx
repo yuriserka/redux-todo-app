@@ -1,11 +1,11 @@
 import { store } from "@store/store";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, RenderResult } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 describe("app component", () => {
-  let component: any;
+  let component: RenderResult;
 
   beforeEach(() => {
     component = render(

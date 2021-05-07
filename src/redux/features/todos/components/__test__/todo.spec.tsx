@@ -1,11 +1,12 @@
 import TodoListItem from "@features/todos/components/todo";
 import { ITodo } from "@features/todos/todo-interface";
 import { store } from "@store/store";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, RenderResult } from "@testing-library/react";
 import { Provider } from "react-redux";
 
 describe("create-todo component", () => {
-  let component: any;
+  let component: RenderResult;
+
   const todo: ITodo = {
     id: "fake-id",
     checked: false,

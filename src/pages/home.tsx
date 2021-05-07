@@ -17,7 +17,7 @@ export default function Home() {
   function ChangeViewButtonTo(view: Views) {
     return (
       <button
-        data-test={`btn-${view}`}
+        data-testid={`btn-${view}`}
         onClick={() => setActualView(view)}
         className={`capitalize hover:bg-blue-400 p-2 rounded-md font-semibold ${
           actualView === view ? "bg-blue-300" : ""
@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div
-      data-test="home-page"
+      data-testid="home-page"
       className="min-h-screen flex flex-col tracking-wide"
     >
       <CreateTodo />
@@ -38,7 +38,7 @@ export default function Home() {
         {ChangeViewButtonTo("completed")}
         {ChangeViewButtonTo("uncompleted")}
       </div>
-      <div data-test="todo-list" className="flex p-5">
+      <div data-testid="todo-list" className="flex p-5">
         <TodoList view={actualView} />
       </div>
     </div>

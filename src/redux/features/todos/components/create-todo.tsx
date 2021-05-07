@@ -49,25 +49,25 @@ export default function CreateTodo() {
 
   return (
     <form
-      data-test="create-todo-form"
+      data-testid="create-todo-form"
       className="centered flex-col space-y-3 h-60 w-full bg-gradient-to-r from-yellow-300 to-indigo-500 via-pink-400 animate-gradient-x"
       onSubmit={handleSubmit}
     >
       <h1 className="text-5xl font-bold text-gray-800 mb-2">Create Todo</h1>
       <Input
-        data-test="input-todo-title"
+        data-testid="input-todo-title"
         name="title"
         value={form?.title}
         onChange={handleChange}
       />
       <Input
-        data-test="input-todo-description"
+        data-testid="input-todo-description"
         name="description"
         value={form?.description}
         onChange={handleChange}
       />
       <button
-        data-test="btn-todo-create-confirm"
+        data-testid="btn-todo-create-confirm"
         type="submit"
         className={`rounded-full sm:hidden p-2 ${
           !!form?.title ? "cursor-pointer hover:bg-blue-500" : "cursor-not-allowed"

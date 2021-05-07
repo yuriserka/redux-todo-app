@@ -37,12 +37,12 @@ export default function TodoList({ view }: Props) {
     return (
       <h1 className="text-3xl font-bold centered">
         {view === "uncompleted" ? (
-          <p data-test="no-unfinished" className="text-center">
+          <p data-testid="no-unfinished" className="text-center">
             You don't have any unfinished Todo. Great job!
             <Emoji className="ml-2" symbol={0x1f600} />
           </p>
         ) : (
-          <p data-test="no-finished" className="text-center">
+          <p data-testid="no-finished" className="text-center">
             You don't have any finished Todo. Keep working!
             <Emoji className="ml-2" symbol={0x1f635} />
           </p>
@@ -55,7 +55,7 @@ export default function TodoList({ view }: Props) {
     <div className="grid grid-cols-1 w-full sm:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center">
       {sortByLastModificationDate(entities).map((t) => (
         <div
-          data-test={`todo-${t.id}`}
+          data-testid={`todo-${t.id}`}
           key={t.id}
           className="shadow-md rounded-xl bg-gray-100 hover:bg-gray-300"
         >

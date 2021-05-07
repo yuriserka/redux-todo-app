@@ -34,13 +34,13 @@ export default function TodoListItem({ todo }: Props) {
       </div>
       <div className="flex flex-col space-y-4 ml-auto items-center justify-between">
         <FaRegTrashAlt
-          data-test="delete-todo"
+          data-testid="delete-todo"
           className="text-red-400 group-hover:text-red-600 cursor-pointer"
           size={20}
           onClick={() => dispatch(todosAction.delete(todo.id))}
         />
         <input
-          data-test="check-todo"
+          data-testid="check-todo"
           className={`cursor-pointer form-checkbox`}
           type="checkbox"
           checked={todo.checked}
